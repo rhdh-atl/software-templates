@@ -17,8 +17,8 @@ spec:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
       metadata:
+        generateName: poi-gty-gh-
         labels:
-          generateName: poi-gty-gh-
           backstage.io/kubernetes-id: ${{values.component_id}}
       spec:
         params:
