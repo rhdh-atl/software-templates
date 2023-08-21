@@ -18,7 +18,7 @@ spec:
       kind: PipelineRun
       metadata:
         labels:
-          generateName: {{ .Values.app.name }}-
+          generateName: poi-gty-gh-
           backstage.io/kubernetes-id: ${{values.component_id}}
       spec:
         params:
