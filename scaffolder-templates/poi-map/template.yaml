@@ -79,7 +79,7 @@ spec:
           component_id: ${{parameters.namespace}}-poi-map-app
 
     - id: wait01
-      name: Waiting for 15 Seconds for Render
+      name: Waiting for 15 Seconds for Render01
       action: 'debug:wait'
       input:
         seconds: 15
@@ -98,7 +98,7 @@ spec:
         repoVisibility: public    
 
     - id: wait02
-      name: Waiting for 15 Seconds for Render
+      name: Waiting for 15 Seconds for Render02
       action: 'debug:wait'
       input:
         seconds: 15
