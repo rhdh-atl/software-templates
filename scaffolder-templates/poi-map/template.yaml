@@ -97,7 +97,7 @@ spec:
         protectDefaultBranch: false
         repoVisibility: public    
 
-    - id: wait01
+    - id: wait02
       name: Waiting for 15 Seconds for Render
       action: 'debug:wait'
       input:
