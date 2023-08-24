@@ -110,11 +110,7 @@ spec:
         repoContentsUrl: ${{steps.publishSource.output.repoContentsUrl}}
         catalogInfoPath: /catalog-info.yaml
 
-    - id: wait01
-      name: Waiting for 15 Seconds for Render
-      action: 'debug:wait'
-      input:
-        seconds: 15
+
         
     - id: templateGitops
       name: Generating the deployment resources and artefacts
@@ -136,11 +132,6 @@ spec:
           image_tag: ${{parameters.image_tag}}
         targetPath: ./tenant-gitops
 
-    - id: wait01
-      name: Waiting for 15 Seconds for Render
-      action: 'debug:wait'
-      input:
-        seconds: 15
 
     - id: publishGitops
       name: Publishing to Deployment Resource Repository
@@ -154,11 +145,7 @@ spec:
         protectDefaultBranch: false
         repoVisibility: public
 
-    - id: wait01
-      name: Waiting for 15 Seconds for Render
-      action: 'debug:wait'
-      input:
-        seconds: 15
+
 
     - id: createArgoResources
       name: Create ArgoCD Resources
