@@ -79,10 +79,10 @@ spec:
           component_id: ${{parameters.namespace}}-poi-map-app
 
     - id: wait01
-      name: Waiting for template render
+      name: Waiting for 15 Seconds for Render
       action: 'debug:wait'
       input:
-        seconds: 30
+        seconds: 15
           
     - id: publishSource
       name: Publishing to Source Code Repository
@@ -97,6 +97,12 @@ spec:
         protectDefaultBranch: false
         repoVisibility: public    
 
+    - id: wait01
+      name: Waiting for 15 Seconds for Render
+      action: 'debug:wait'
+      input:
+        seconds: 15
+
     - id: registerSource
       name: Registering the Source Code Component
       action: catalog:register
@@ -104,6 +110,11 @@ spec:
         repoContentsUrl: ${{steps.publishSource.output.repoContentsUrl}}
         catalogInfoPath: /catalog-info.yaml
 
+    - id: wait01
+      name: Waiting for 15 Seconds for Render
+      action: 'debug:wait'
+      input:
+        seconds: 15
         
     - id: templateGitops
       name: Generating the deployment resources and artefacts
@@ -125,6 +136,11 @@ spec:
           image_tag: ${{parameters.image_tag}}
         targetPath: ./tenant-gitops
 
+    - id: wait01
+      name: Waiting for 15 Seconds for Render
+      action: 'debug:wait'
+      input:
+        seconds: 15
 
     - id: publishGitops
       name: Publishing to Deployment Resource Repository
@@ -138,6 +154,11 @@ spec:
         protectDefaultBranch: false
         repoVisibility: public
 
+    - id: wait01
+      name: Waiting for 15 Seconds for Render
+      action: 'debug:wait'
+      input:
+        seconds: 15
 
     - id: createArgoResources
       name: Create ArgoCD Resources
