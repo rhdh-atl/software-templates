@@ -97,24 +97,12 @@ spec:
         protectDefaultBranch: false
         repoVisibility: public    
 
-    - id: wait02
-      name: Waiting for template render
-      action: 'debug:wait'
-      input:
-        seconds: 30
-
     - id: registerSource
       name: Registering the Source Code Component
       action: catalog:register
       input:
         repoContentsUrl: ${{steps.publishSource.output.repoContentsUrl}}
         catalogInfoPath: /catalog-info.yaml
-
-    - id: wait03
-      name: Waiting for template render
-      action: 'debug:wait'
-      input:
-        seconds: 30
 
         
     - id: templateGitops
@@ -137,11 +125,6 @@ spec:
           image_tag: ${{parameters.image_tag}}
         targetPath: ./tenant-gitops
 
-    - id: wait04
-      name: Waiting for template render
-      action: 'debug:wait'
-      input:
-        seconds: 30
 
     - id: publishGitops
       name: Publishing to Deployment Resource Repository
@@ -154,12 +137,6 @@ spec:
         defaultBranch: main
         protectDefaultBranch: false
         repoVisibility: public
-
-    - id: wait05
-      name: Waiting for template render
-      action: 'debug:wait'
-      input:
-        seconds: 30
 
 
     - id: createArgoResources
